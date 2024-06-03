@@ -1,0 +1,19 @@
+# PostgreSQL
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: sample_postgres_development
+  pool: 5
+  username: sample_postgres
+  password: admin
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: sample_postgres_test
+  pool: 5
+  username: sample_postgres
+  password: admin
+
+production:
+  url: <%= ENV['DATABASE_URL'] %>
