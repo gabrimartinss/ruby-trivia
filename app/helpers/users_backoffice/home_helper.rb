@@ -1,0 +1,2 @@
+module UsersBackoffice::HomeHelper
+end
