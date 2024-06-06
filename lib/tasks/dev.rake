@@ -17,20 +17,28 @@ namespace :dev do
 
   desc "Cadastro Admin Padrão"
   task add_default_admin: :environment do
-    Admin.create!(
-      email: "admin@gmail.com",
-      password: DEFAULT_PASSWORD,
-      password_confirmation: DEFAULT_PASSWORD
-    )
+    admins = [
+      { email: "admin@gmail.com", password: DEFAULT_PASSWORD, password_confirmation: DEFAULT_PASSWORD },
+      { email: "jhon_silva@gmail.com", password: DEFAULT_PASSWORD, password_confirmation: DEFAULT_PASSWORD },
+      { email: "yuna_downey@gmail.com", password: DEFAULT_PASSWORD, password_confirmation: DEFAULT_PASSWORD }
+    ]
+
+    admins.each do |admin|
+      Admin.create!(admin)
+    end
   end
 
   desc "Cadastro Usuário Padrão"
   task add_default_user: :environment do
-    User.create!(
-      email: "user@gmail.com",
-      password: DEFAULT_PASSWORD,
-      password_confirmation: DEFAULT_PASSWORD
-    )
+    users = [
+      { email: "user@gmail.com", password: DEFAULT_PASSWORD, password_confirmation: DEFAULT_PASSWORD },
+      { email: "robert_carlos@gmail.com", password: DEFAULT_PASSWORD, password_confirmation: DEFAULT_PASSWORD },
+      { email: "looney_tunes@gmail.com", password: DEFAULT_PASSWORD, password_confirmation: DEFAULT_PASSWORD }
+    ]
+
+    users.each do |user|
+      User.create!(user)
+    end
   end
 
   def show_spinner(msg_start, msg_end = "Concluído!")
