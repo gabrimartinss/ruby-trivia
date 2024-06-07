@@ -1,0 +1,29 @@
+<div class="bd-example">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Email</th>
+        <th scope="col">Created At</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @admins.each do |admin| %>
+      <tr>
+        <td><%= admin.id %></td>
+        <td><%= admin.email %></td>
+        <td><%= admin.created_at %></td>
+        <td style="width: 100px">
+          <%= link_to root_path, class: "btn btn-primary btn-circle me-2" do %>
+            <i class="bi bi-pencil fs-6"></i>
+          <% end %>
+          <%= link_to root_path, class: "btn btn-danger btn-circle" do %>
+            <i class="bi bi-calendar2-x-fill fs-6"></i>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
