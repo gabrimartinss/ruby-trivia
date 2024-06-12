@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   namespace :admins_backoffice do
     get 'home/index' # Dashboard
     resources :admins # Administrators
+    resources :subjects
   end
   devise_for :admins
   devise_for :users

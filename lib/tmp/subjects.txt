@@ -1,0 +1,36 @@
+Introdução ao Ruby
+Sintaxe básica do Ruby
+Estruturas de controle em Ruby
+Orientação a objetos em Ruby
+Classes e módulos em Ruby
+Manipulação de strings e arrays em Ruby
+Gemas e Bundler
+Introdução ao Rails
+Configuração do ambiente Rails
+Estrutura de um aplicativo Rails
+Convenções do Rails
+MVC (Model-View-Controller)
+Geradores e scaffolding
+Active Record
+Migrações de banco de dados
+Validações e callbacks
+Associações entre modelos
+Consultas de banco de dados com Active Record
+Views e layouts
+ERB (Embedded Ruby)
+Helpers de visualização
+Formulários e helpers de formulário
+Rotas em Rails
+Controllers em Rails
+Autenticação e autorização
+Debugging e logging
+Testes em Rails
+RSpec e FactoryBot
+Integração com APIs
+Action Mailer
+Active Job e background jobs
+WebSockets e ActionCable
+Deploy de aplicativos Rails
+Segurança em Rails
+Otimização de desempenho
+Internacionalização (i18n) em Rails
