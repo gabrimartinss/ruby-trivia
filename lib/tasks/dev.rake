@@ -11,8 +11,7 @@ namespace :dev do
       show_spinner("Cadastrando admin padrão...") { %x(rails dev:add_default_admin) }
       show_spinner("Cadastrando usuário padrão...") { %x(rails dev:add_default_user) }
       show_spinner("Cadastrando temas padrão...") { %x(rails dev:add_subjects) }
-      show_spinner("Cadastrando perguntas...") { %x(rails dev:add_answers_questions) }
-
+      show_spinner("Cadastrando Perguntas...") { %x(rails dev:add_answers_questions) }
     else
       puts "Você não está em desenvolvimento"
     end
@@ -72,7 +71,7 @@ namespace :dev do
     Subject.all.each do |subject|
       rand(8..10).times do |i|
         Question.create!(
-          description: "#{Faker::Lorem.paragraph} #{Faker::Lorem.question}",
+          description: "Qual comando abre o console do rails?????",
           subject: subject
       )  
       end

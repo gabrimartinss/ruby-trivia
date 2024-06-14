@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get 'home/index' # Dashboard
     resources :admins # Administrators
     resources :subjects
+    resources :questions
   end
   devise_for :admins
   devise_for :users
