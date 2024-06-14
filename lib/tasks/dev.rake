@@ -10,7 +10,8 @@ namespace :dev do
       show_spinner("Gerando Migrações...") { %x(rails db:migrate) }
       show_spinner("Cadastrando admin padrão...") { %x(rails dev:add_default_admin) }
       show_spinner("Cadastrando usuário padrão...") { %x(rails dev:add_default_user) }
-      show_spinner("Cadastrando assuntos padrão...") { %x(rails dev:add_subjects) }
+      show_spinner("Cadastrando temas padrão...") { %x(rails dev:add_subjects) }
+      show_spinner("Cadastrando perguntas...") { %x(rails dev:add_answers_questions) }
 
     else
       puts "Você não está em desenvolvimento"
@@ -56,7 +57,7 @@ namespace :dev do
     end
   end
 
-  desc "Adiciona assuntos padrão"
+  desc "Adiciona Temas"
   task add_subjects: :environment do
     file_name = 'subjects.txt'
     file_path = File.join(DEFAULT_FILES_PATH, file_name)
@@ -65,6 +66,20 @@ namespace :dev do
       Subject.create!(description: line.strip)
     end
   end
+
+  desc "Adiciona Perguntas e respostas"
+  task add_answers_questions: :environment do
+    Subject.all.each do |subject|
+      rand(8..10).times do |i|
+        Question.create!(
+          description: "#{Faker::Lorem.paragraph} #{Faker::Lorem.question}",
+          subject: subject
+      )  
+      end
+    end
+  end
+
+  private
 
   def show_spinner(msg_start, msg_end = "Concluído!")
     spinner = TTY::Spinner.new("[:spinner] #{msg_start}")
