@@ -70,10 +70,23 @@ namespace :dev do
   task add_answers_questions: :environment do
     Subject.all.each do |subject|
       rand(8..10).times do |i|
-        Question.create!(
-          description: "Qual comando abre o console do rails?????",
-          subject: subject
-      )  
+        #Cria a pergunta
+        params =  { question: {
+                  description: "Ipsi dumi sala hujifxi trus tes?",
+                  subject: subject,
+                  answers_attributes: []}
+                  }
+                  #cria as respostas
+                  rand(2..5).times do |j|
+                    params[:question][:answers_attributes].push(
+                      { description: "Humjiu dou wopsyz", correct: false}
+                    )
+                  end
+                  #aleatoriamente escolhe uma para ser a true
+                  index = rand(params[:question][:answers_attributes].size)
+                  params[:question][:answers_attributes][index] = { description: "Humjiu dou wopsyz", correct: true}
+                  #cria com os parametros feitos acima
+                  Question.create!(params[:question])
       end
     end
   end
