@@ -16,7 +16,14 @@ FROM base as build
 
 # Install packages needed to build gems
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git libpq-dev libvips pkg-config
+    apt-get install --no-install-recommends -y build-essential git libpq-dev libvips pkg-config curl
+
+# Add NodeSource repository and install Node.js
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
+    apt-get install -y nodejs
+
+# Install Yarn
+RUN npm install -g yarn
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./
@@ -35,8 +42,11 @@ RUN bundle exec bootsnap precompile app/ lib/
 FROM base
 
 # Install packages needed for deployment
-RUN apt-get update -qq && apt-get install -y nodejs && \
-    apt-get install --no-install-recommends -y curl libvips postgresql-client && \
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y libvips postgresql-client curl && \
+    curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
+    apt-get install -y nodejs && \
+    npm install -g yarn && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Copy built artifacts: gems, application
