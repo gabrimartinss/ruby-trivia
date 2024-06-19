@@ -14,10 +14,20 @@
       <span class="text-white"><%= form.label :description, style: "display: block" %>
       <%= form.text_area :description, class:"form-control", placeholder:"Question Description", rows: 5 %>
     </div><br>
+
     <div class="form-group">
       <span class="text-white"><%= form.label :subject_id, style: "display: block" %>
       <!--collection_select(object, method, collection, value_method, text_method, object is already been used by form so we dont need to put-->
       <%= form.collection_select(:subject_id, @subjects, :id, :description, {}, class:"form-control") %>
-    </div><br>
+   </div><br>
+
+  <div id='answers'>
+    <%= form.fields_for :answers do |answer| %>
+                                          <!-- nesse trecho abaixo estou dizendo que vou passar meu 'answer' para a partial com nome de 'f'-->
+      <%= render partial: "answer_fields", locals: { f: answer } %>
+    <% end %>
+    <%= link_to_add_association '[Adicionar Resposta]', form, :answers %>
+  </div>
+
     <button type="submit" class="btn btn-primary">Save</button>
   <% end %>
