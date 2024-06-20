@@ -2,6 +2,11 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
   before_action :set_admin, only: %i[ edit update destroy ]
   before_action :verify_password, only: %i[ update ]
 
+  def after_sign_in_path_for(resource)
+    puts "After sign in for Admin"
+    admins_backoffice_home_index_path
+  end
+
   def index
     @admins = Admin.all.page(params[:page])
   end
