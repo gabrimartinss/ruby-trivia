@@ -9,7 +9,6 @@
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <%= javascript_importmap_tags %>
   <%= javascript_include_tag "jquery" %>
-
 </head>
 
 <body>
@@ -32,13 +31,23 @@
             <%= link_to "Authors", '#', class: "nav-link" %>
           </li>
         </ul>
+
+        <!-- Search Form -->
+
+        <%= form_with url: users_backoffice_search_path, local: true, class: "d-flex navbar-form ms-auto", method: :get do |form| %>
+          <div class="form-group me-2">
+            <%= form.text_field :term, class: "form-control", placeholder: "type to search..." %>
+          </div>
+          <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Search</button>
+        <% end %>
+
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <%= button_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
+          <li class="nav-item">
+            <%= button_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
               <%=t('Sair')%>
-                <span class="bi bi-box-arrow-right fs-6"></span>
-              <% end %>
-            </li>
+              <span class="bi bi-box-arrow-right fs-6"></span>
+            <% end %>
+          </li>
         </ul>
       </div>
     </div>

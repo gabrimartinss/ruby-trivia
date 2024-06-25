@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   end
   namespace :users_backoffice do
     get 'home/index'
+    get 'search', to: 'search#questions' 
   end
   namespace :admins_backoffice do
     get 'home/index' # Dashboard
