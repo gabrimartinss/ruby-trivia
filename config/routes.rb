@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :users_backoffice do
     get 'home/index'
     get 'search', to: 'search#questions' 
+    post 'answer', to: 'answer#question'
   end
   namespace :admins_backoffice do
     get 'home/index' # Dashboard
