@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     get 'home/index'
     get 'search', to: 'search#questions' 
     post 'answer', to: 'answer#question'
+    get 'subject/:subject_id', to: 'search#subject', as: 'search_subject'
   end
   namespace :admins_backoffice do
     get 'home/index' # Dashboard
