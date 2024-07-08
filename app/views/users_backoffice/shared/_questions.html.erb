@@ -4,7 +4,7 @@
       <div class="card-header">
         <h3 class="card-title">
           <span class="badge bg-info">
-            <%= link_to question.subject.description, users_backoffice_search_subject_path(question.subject_id) %>
+            <%= link_to "#{question.subject.description} (#{question.subject.questions.count})", users_backoffice_search_subject_path(question.subject_id) %>
           </span>
           <%= question.description %>
         </h3>
