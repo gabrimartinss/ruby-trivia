@@ -16,32 +16,12 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container-fluid">
-      <a class="navbar-brand">RubyTrivia - ADMIN</a>
+      <a class="navbar-brand">RubyTrivia</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <%= link_to '#', class: "nav-link" do %>
-              <span class="bi bi-speedometer2"></span> <%= t("teste") %>
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to '#', class: "nav-link" do %>
-              <span class="bi bi-person"></span> <%= t("teste") %>
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to '#', class: "nav-link" do %>
-              <span class="bi bi-lightbulb"></span> <%= t("teste") %>
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to '#', class: "nav-link" do %>
-              <span class="bi bi-question-diamond"></span> <%= t("teste") %>
-            <% end %>
-          </li>
         </ul>
         
         <!-- Login links aligned to the right -->
@@ -49,11 +29,6 @@
           <li class="nav-item">
             <%= link_to users_backoffice_home_index_path, class: "btn btn-outline-info my-2 my-sm-0 me-2" do %>
               <%= t('Login') %>
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to admins_backoffice_home_index_path, class: "btn btn-outline-info my-2 my-sm-0" do %>
-              <%= t('Login Administrator') %>
             <% end %>
           </li>
         </ul>
