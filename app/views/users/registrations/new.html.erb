@@ -1,3 +1,16 @@
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+      <%= link_to "RubyTrivia", site_home_index_path, class: "navbar-brand" %>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        </ul>
+      </div>
+    </div>
+  </nav><br>
+
 <h2 style="color: white;">Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -25,11 +38,5 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-
-<th>
-  <%= link_to site_home_index_path, class: "btn btn-success" do  %>
-    <i class="bi bi-plus-circle"></i>
-  <% end %> 
-</th>
 
 <%= render "users/shared/links" %>
