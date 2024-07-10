@@ -21,19 +21,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <%= link_to "Home", users_backoffice_home_index_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Books", '#', class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Authors", '#', class: "nav-link" %>
-          </li>
         </ul>
 
         <!-- Search Form -->
-
         <%= form_with url: users_backoffice_search_path, local: true, class: "d-flex navbar-form ms-auto", method: :get do |form| %>
           <div class="form-group me-2">
             <%= form.text_field :term, class: "form-control", placeholder: "type to search..." %>
@@ -53,9 +43,29 @@
     </div>
   </nav>
 
-  <div class="container mt-4">
-    <%= yield %>
+  <div class="container-fluid">
+    <div class="row flex-nowrap">
+      <!-- Sidebar -->
+      <div class="col-md-2 bg-dark text-light vh-100 sidebar">
+        <div class="profile text-center my-4">
+          <img src="<%= image_url('profile.jpg') %>" alt="Profile Picture" class="rounded-circle" width="100">
+          <h4 class="mt-2">Nome do Usuário</h4>
+        </div>
+        <div class="nav flex-column">
+          <%= link_to "Home", users_backoffice_home_index_path, class: "nav-link text-light" %>
+          <%= link_to "Books", '#', class: "nav-link text-light" %>
+          <%= link_to "Authors", '#', class: "nav-link text-light" %>
+          <!-- Adicione outros links conforme necessário -->
+        </div>
+      </div>
+      
+      <!-- Main Content -->
+      <div class="col-md-10 main-content">
+        <div class="container mt-4">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </div>
-
 </body>
 </html>

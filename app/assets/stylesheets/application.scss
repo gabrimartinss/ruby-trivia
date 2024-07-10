@@ -55,3 +55,25 @@
     margin-top: 1rem;
     padding-top: 1rem;
   }
+
+/* Navigation left side */
+.sidebar {
+  height: 100vh;
+  position: fixed;
+  overflow-y: auto;
+  background-color: #b32727; /* Cor de fundo preta */
+}
+
+.sidebar .nav-link {
+  color: #fff; /* Cor do texto branco */
+}
+
+.sidebar .profile img {
+  border: 2px solid #ddd;
+  padding: 5px;
+}
+
+.main-content {
+  margin-left: 16.6667%; /* Espaço correspondente à largura da sidebar (col-md-2) */
+  padding: 20px; /* Adiciona um pouco de padding para o conteúdo principal */
+}
