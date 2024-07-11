@@ -1,3 +1,10 @@
+<%= form_with url: users_backoffice_search_path, local: true, class: "d-flex navbar-form ms-auto", method: :get do |form| %>
+  <div class="form-group me-2">
+    <%= form.text_field :term, class: "form-control", placeholder: "type to search..." %>
+  </div>
+  <button type="submit" class="btn btn-success my-2 my-sm-0">Search</button>
+<% end %><br>
+
 <% @questions.each do |question| %>
   <%= form_with url: users_backoffice_answer_path, local: true, data: { turbo: false } do |form| %>
     <div class="card mb-4">
