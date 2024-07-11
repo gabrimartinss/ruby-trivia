@@ -1,144 +1,173 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <style>
+    .centered-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      z-index: 2;
+    }
+
+    .centered-content h2 {
+      font-size: 2.5em;
+    }
+
+    .centered-content p {
+      font-size: 1.2em;
+    }
+
+    /* Media queries */
+    @media (max-width: 1200px) {
+      .centered-content h2 {
+        font-size: 2em;
+      }
+      .centered-content p {
+        font-size: 1em;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .centered-content h2 {
+        font-size: 1.8em;
+      }
+      .centered-content p {
+        font-size: 0.9em;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .centered-content h2 {
+        font-size: 1.5em;
+      }
+      .centered-content p {
+        font-size: 0.8em;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .centered-content h2 {
+        font-size: 1.2em;
+      }
+      .centered-content p {
+        font-size: 0.7em;
+      }
+    }
+  </style>
+</head>
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container-fluid">
       <%= link_to "RubyTrivia", site_home_index_path, class: "navbar-brand" %>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <!-- Links da navbar esquerda -->
         </ul>
-        
-        <!-- Login links aligned to the right -->
+
+        <!-- Login links alinhados à direita -->
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <%= link_to users_backoffice_home_index_path, class: "btn btn-outline-info my-2 my-sm-0 me-2" do %>
+            <%= link_to users_backoffice_home_index_path, class: "btn btn-outline-danger d-none d-lg-block" do %>
               <%= t('Login') %>
             <% end %>
           </li>
-          <li class="nav-item">
-            <%= link_to new_user_registration_path, class: "btn btn-outline-info my-2 my-sm-0 me-2" do %>
-              <%= t('Sign Up') %>
-            <% end %>
-          </li>
         </ul>
-        
       </div>
     </div>
-  </nav><br>
+  </nav>
+  <br>
 
-  <body>
-    <main role="main">
-      <!-- Marketing messaging and featurettes
-      ================================================== -->
-      <!-- Wrap the rest of the page in another container to center all the content. -->
-
-      <div class="container marketing">
-
-      <!-- Three columns of text below the carousel -->
-      <div class="container">
-        <!-- Three columns of text below the carousel -->
-        <div class="row text-white" style="height: 50vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-          <div class="col-lg-4 text-center mb-4">
-            <img class="rounded-circle" src="/assets/logo.png" alt="Generic placeholder image" width="280" height="280">
-          </div>
-          <div class="col-lg-4 text-center">
-            <h2 style="font-size: 2.5em; color: #333; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">Ruby Trivia</h2>
-            <p>Discover Ruby Trivia, an application by DevThree designed to assist new programmers in mastering Ruby on Rails. Visit
-              <a href="http://www.devthree.com.br" class="text-white">www.devthree.com.br</a> to learn more about our mission and resources.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
-          </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-      </div><!-- /.container -->
-
-
-
-        <!-- START THE FEATURETTES -->
-
-        <hr class="featurette-divider" style="height: 2px; border-width: 0; background-color: #000;">
-
-        <div class="row featurette text-white">
-          <div class="col-md-7">
-            <h2 class="featurette-heading">Free Ruby on Rails Learning Platform: Master the Framework</h2>
-            <p class="lead">
-                  Explore our free learning platform for mastering Ruby on Rails. Whether you're a beginner or
-             an experienced developer, our comprehensive resources cover everything from fundamentals to advanced techniques.
-              Dive into real-world projects, learn efficient development practices, and join a vibrant community of learners. 
-              Start coding today and unleash the power of Rails to advance your career in tech</p>
-          </div>
-          <div class="col-md-5">
-            <img class="featurette-image img-fluid mx-auto" src="/assets/rails_free.png" alt="Rails Image" width="420" height="420">
+  <main role="main">
+    <!-- Marketing messaging and featurettes -->
+    <div class="container marketing">
+      <!-- Centered image with overlay text -->
+      <div class="container" style="height: 50vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; margin-bottom: 50px; padding-top: 100px; z-index: 1;">
+        <div class="row">
+          <div class="col-lg-12" style="position: relative;">
+            <img src="/assets/03.png" alt="Centered Image" style="max-width: 100%; height: auto;">
+            <div class="centered-content">
+              <h2>Ruby Trivia</h2>
+              <p>Discover Ruby Trivia, an application by DevThree designed to assist new programmers in mastering Ruby on Rails.</p>
+              <p><%= link_to "Get Started »", new_user_registration_path, class: "btn btn-danger btn-sm", role: "button" %></p>
+            </div>
           </div>
         </div>
+      </div><br><br><br>
 
+      <hr class="featurette-divider" style="height: 2px; border-width: 0; background-color: #000;">
 
-        <hr class="featurette-divider" style="height: 2px; border-width: 0; background-color: #000;">
-
-        <div class="row featurette text-white">
-          <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">Ruby on Rails in Major Enterprises: Driving Efficiency and Innovation</h2>
-            <p class="lead">
-              Ruby on Rails (Rails) has become pivotal in enterprise software development for its simplicity,
-             robustness, and agility. This framework accelerates time-to-market by emphasizing convention over configuration,
-              making it ideal for scalable applications that evolve with enterprise growth. With a rich ecosystem of plugins
-               and a developer-friendly codebase, Rails supports diverse enterprise needs from e-commerce to analytics, fostering
-                collaboration and innovation. By adhering to DRY and MVC principles, Rails ensures code maintainability and scalability,
-                 crucial for large-scale deployments. As enterprises prioritize agility and innovation, Rails continues to empower efficient,
-                  scalable solutions that drive competitive advantage and exceptional user experiences.</p>
-          </div>
-          <div class="col-md-5 order-md-1">
-            <img class="featurette-image img-fluid mx-auto" src="/assets/rails.jpg" alt="500x500" >
-          </div>
+      <div class="row featurette text-white">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Free Ruby on Rails Learning Platform: Master the Framework</h2>
+          <p class="lead">
+            Explore our free learning platform for mastering Ruby on Rails. Whether you're a beginner or an experienced developer, our comprehensive resources cover everything from fundamentals to advanced techniques. Dive into real-world projects, learn efficient development practices, and join a vibrant community of learners. Start coding today and unleash the power of Rails to advance your career in tech.
+          </p>
         </div>
-
-        <hr class="featurette-divider" style="height: 2px; border-width: 0; background-color: #000;">
-
-        <div class="row featurette text-white">
-          <div class="col-md-7">
-            <h2 class="featurette-heading">Sign in and Start Using the Tool Now!
-            <p class="lead">Unlock your access to our powerful tool by signing in today. Dive into a wealth of resources 
-            and features designed to enhance your experience from the moment you log in. Join a vibrant community of learners 
-            and developers, ready to support your journey in mastering Ruby on Rails and beyond. </p>
-          </div>
-          <div class="col-md-5">
-            <img class="featurette-image img-fluid mx-auto" src="/assets/rails_login.png" alt="500x500" width="420" height="420" >
-          </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-fluid mx-auto" src="/assets/01.png" alt="Rails Image" width="420" height="420">
         </div>
+      </div>
 
-        <hr class="featurette-divider" style="height: 2px; border-width: 0; background-color: #000;">
+      <hr class="featurette-divider" style="height: 2px; border-width: 0; background-color: #000;">
 
-        <!-- /END THE FEATURETTES -->
+      <div class="row featurette text-white">
+        <div class="col-md-7 order-md-2">
+          <h2 class="featurette-heading">Ruby on Rails in Major Enterprises: Driving Efficiency and Innovation</h2>
+          <p class="lead">
+            Ruby on Rails (Rails) has become pivotal in enterprise software development for its simplicity, robustness, and agility. This framework accelerates time-to-market by emphasizing convention over configuration, making it ideal for scalable applications that evolve with enterprise growth. With a rich ecosystem of plugins and a developer-friendly codebase, Rails supports diverse enterprise needs from e-commerce to analytics, fostering collaboration and innovation. By adhering to DRY and MVC principles, Rails ensures code maintainability and scalability, crucial for large-scale deployments. As enterprises prioritize agility and innovation, Rails continues to empower efficient, scalable solutions that drive competitive advantage and exceptional user experiences.
+          </p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img class="featurette-image img-fluid mx-auto" src="/assets/05.png" alt="250x250" width="350" height="350">
+        </div>
+      </div>
 
-      </div><!-- /.container -->
+      <hr class="featurette-divider" style="height: 2px; border-width: 0; background-color: #000;">
 
+      <div class="row featurette text-white">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Sign in and Start Using the Tool Now!</h2>
+          <p class="lead">
+            Unlock your access to our powerful tool by signing in today. Dive into a wealth of resources and features designed to enhance your experience from the moment you log in. Join a vibrant community of learners and developers, ready to support your journey in mastering Ruby on Rails and beyond.
+          </p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-fluid mx-auto" src="/assets/02.png" alt="500x500" width="420" height="420">
+        </div>
+      </div>
 
-      <!-- FOOTER -->
-      <footer class="container text-center">
-        <a href="#" class="btn btn-danger btn-lg">Back to top</a>
-        <hr class="featurette-divider" style="height: 2px; border-width: 0; background-color: #000;">
-      </footer>
-      <footer class="container mt-4 text-white">
-        <h2>Contact Us</h2>
-        <form action="/send_email" method="POST">
-          <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" name="name" required>
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="email" name="email" required>
-          </div>
-          <div class="mb-3">
-            <label for="message" class="form-label">Message</label>
-            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Send</button>
-        </form>
-      </footer>
-    </main>
+      <hr class="featurette-divider" style="height: 2px; border-width: 0; background-color: #000;">
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="container text-center">
+      <a href="#" class="btn btn-danger btn-lg">Back to top</a>
+      <hr class="featurette-divider" style="height: 2px; border-width: 0; background-color: #000;">
+    </footer>
+    <footer class="container mt-4 text-white">
+      <h2>Contact Us</h2>
+      <form action="/send_email" method="POST">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send</button>
+      </form>
+    </footer>
+  </main>
 
   <div class="container mt-4">
     <%= yield %>
