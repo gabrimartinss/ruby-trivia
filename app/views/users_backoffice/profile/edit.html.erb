@@ -4,10 +4,9 @@
       <div class="col-12 col-lg-9 col-xl-7">
         <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
           <div class="card-body p-4 p-md-5">
-            <hr class="featurette-divider" style="height: 1px; border-width: 0; background-color: #000;">
             <h3 class="mb-4 pb-2 pb-md-0 mb-md-1">Profile Information</h3>
             <hr class="featurette-divider" style="height: 1px; border-width: 0; background-color: #000;">
-            <!-- fora do rest aqui -->
+            
             <%= form_with(url: users_backoffice_profile_path, model: @user, local: true) do |form| %>
               <div class="form-group">
                 <%= form.label :first_name, "First Name", class:"control-label col-md-6 col-sm-3 col-xs-12", style: "display: block" %>
@@ -21,6 +20,43 @@
                 <%= form.label :email, "Email", class: "control-label col-md-3 col-sm-3 col-xs-12", style: "display: block" %>
                 <%= form.text_field :email, class: "form-control bg-secondary", readonly: true %>
               </div><br>
+
+              <!-- UserProfile -->
+              <%= form.fields_for :user_profile do |profile_form| %>
+                <div class="form-group">
+                  <%= profile_form.label :address, "Address", class: "control-label col-md-3 col-sm-3 col-xs-12", style: "display: block" %>
+                  <%= profile_form.text_field :address, class: "form-control"%>
+                </div><br>
+                
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <%= profile_form.label :birthdate, "Birthdate", class: "control-label col-md-12" %>
+                      <%= profile_form.date_field :birthdate, class: "form-control"%>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <%= profile_form.label :gender, "Gender", class: "control-label col-md-12" %>
+                      <div>
+                        <div class="form-check form-check-inline">
+                          <%= profile_form.radio_button :gender, 'Male', class: "form-check-input" %>
+                          <%= profile_form.label :gender, 'Male', value: 'Male', class: "form-check-label" %>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <%= profile_form.radio_button :gender, 'Female', class: "form-check-input" %>
+                          <%= profile_form.label :gender, 'Female', value: 'Female', class: "form-check-label" %>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <%= profile_form.radio_button :gender, 'Other', class: "form-check-input" %>
+                          <%= profile_form.label :gender, 'Other', value: 'Other', class: "form-check-label" %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div><br>
+              <% end %>
+
               <div class="form-group">
                 <%= form.label :password, "Password", class:"control-label col-md-3 col-sm-3 col-xs-12", style: "display: block" %>
                 <%= form.password_field :password, class: "form-control", placeholder: "Password" %>

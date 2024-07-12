@@ -3,6 +3,7 @@ class UsersBackoffice::ProfileController < UsersBackofficeController
   before_action :verify_password, only: %i[ update ]
 
   def edit
+    @user.build_user_profile if @user.user_profile.blank?
   end
 
   def update
@@ -16,7 +17,8 @@ class UsersBackoffice::ProfileController < UsersBackofficeController
   private
 
   def params_user
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation,
+    user_profile_attributes: [:id, :address, :gender, :birthdate])
   end
 
   def set_user
