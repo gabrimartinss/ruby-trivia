@@ -16,6 +16,7 @@ services:
       - .:/app
     depends_on:
       - db
+    command: bash -c "bin/rails db:create db:migrate && bin/rails server -b 0.0.0.0"
 
   db:
     image: postgres:latest
