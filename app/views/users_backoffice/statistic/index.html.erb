@@ -1,0 +1,43 @@
+<!-- Fact 4 - Bootstrap Brain Component -->
+<section class="py-5 py-xl-8">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+        <h2 class="mb-4 display-5 text-center text-white">Here is your Statistics</h2>
+        <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle">
+      </div>
+    </div>
+  </div>
+
+  <div class="container overflow-hidden">
+    <div class="row gy-5 gy-md-6 gy-lg-0 justify-content-center">
+      <div class="col-6 col-lg-3">
+        <div class="text-center">
+          <div class="d-flex align-items-center justify-content-center bg-primary mb-3 mx-auto bsb-circle">
+            <!-- Ícone substituído por um ícone simples -->
+            <i class="bi bi-journal text-white" style="font-size: 48px;"></i>
+          </div>
+          <h4 class="display-6 fw-bold m-1 text-white">Total Questions: <%= @user_statistic.total_questions %></h4>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="text-center">
+          <div class="d-flex align-items-center justify-content-center bg-primary mb-3 mx-auto bsb-circle">
+            <!-- Ícone substituído por um ícone simples -->
+            <i class="bi bi-check-circle text-white" style="font-size: 48px;"></i>
+          </div>
+          <h5 class="display-6 fw-bold m-1 text-white">Right Questions: <%= @user_statistic.right_questions %></h5>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="text-center">
+          <div class="d-flex align-items-center justify-content-center bg-primary mb-3 mx-auto bsb-circle">
+            <!-- Ícone substituído por um ícone simples -->
+            <i class="bi bi-x-circle text-white" style="font-size: 48px;"></i>
+          </div>
+          <h5 class="display-6 fw-bold m-1 text-white">Wrong Questions: <%= @user_statistic.wrong_questions %></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

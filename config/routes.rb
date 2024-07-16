@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get 'subject/:subject_id', to: 'search#subject', as: 'search_subject'
     get 'profile', to: 'profile#edit'
     patch 'profile', to: 'profile#update'
+    get 'statistic', to: 'statistic#index'
   end
   namespace :admins_backoffice do
     get 'home/index' # Dashboard
