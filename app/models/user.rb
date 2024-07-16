@@ -14,6 +14,15 @@ class User < ApplicationRecord
     [self.first_name, self.last_name].join(' ')
   end
 
+  # Callback
+  after_create :set_statistic
+
   # Kaminari
   paginates_per 5
+
+  private
+
+  def set_statistic
+    AdminStatistic.set_event(AdminStatistic::EVENTS[:total_users])
+  end
 end
