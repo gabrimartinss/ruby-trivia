@@ -1,42 +1,57 @@
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-    <div class="container-fluid">
-      <%= link_to "RubyTrivia", site_home_index_path, class: "navbar-brand" %>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        </ul>
+<section class="h-100 gradient-form">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
+                <div class="text-center">
+                  <%= image_tag "logo.png", style: "width: 185px;", alt: "logo" %>
+                  <h4 class="mt-1 mb-5 pb-1">Ruby Trivia</h4>
+                </div>
+
+                <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                  <%= render "users/shared/error_messages", resource: resource %>
+                  <div class="text-center">
+                    <h2>Sign up</h2>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <%= f.label :email, class: "form-label" %>
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", id: "form2Example11" %>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <%= f.label :password, class: "form-label" %>
+                    <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <%= f.label :password_confirmation, class: "form-label" %>
+                    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+                  </div>
+
+                  <div class="text-center pt-1 mb-5 pb-1">
+                    <%= f.submit "Sign up", class: "btn btn-primary btn-block fa-lg mb-3" %>
+                    <%= link_to "Back to login", new_session_path(resource_name), class: "text-muted" %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+
+            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+              <div class="text-white px-3 py-4 p-md-5 mx-md-4" style="position: relative;">
+                <h4 class="mb-4">We are the DevThree Team!</h4>
+                <p class="small mb-0" style="font-size: 1.0em;">
+                  This application was developed by DevThree. If you want to know more about us, please check out our site
+                  <%= link_to "www.devthree.com.br", "http://www.devthree.com.br", target: "_blank", class: "devthree-link" %> <br>
+                </p>
+                <%= image_tag "logo_b_devthree.png", style: "width: 160px; position: absolute; bottom: -180px; right: -10px;", alt: "DevThree Logo" %>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </nav><br>
-
-<h2 style="color: white;">Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email, style: "color: white;" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
-
-  <div class="field">
-    <%= f.label :password, style: "color: white;" %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, style: "color: white;" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</section>
