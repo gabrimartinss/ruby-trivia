@@ -8,8 +8,9 @@ class UsersBackoffice::ProfileController < UsersBackofficeController
 
   def update
     if @user.update(params_user)
-      redirect_to users_backoffice_profile_path, notice: "user updated with success!"
+      redirect_to users_backoffice_profile_path, notice: "User updated with success!"
     else
+      flash.now[:alert] = "There was an error updating the user."
       render :edit
     end
   end

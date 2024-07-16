@@ -29,10 +29,10 @@
   background: #fccb90;
   
   /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+  background: -webkit-linear-gradient(to right, #c53e66, #82183e, #82183e);
   
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(to right, #35126a, #008fff, #fa5756, #dc1065, #9d0065);
+  background: linear-gradient(to right, #c53e66, #82183e, #82183e);
   }
   
   @media (min-width: 768px) {
@@ -81,3 +81,26 @@
   margin-left: 16.6667%; /* Espaço correspondente à largura da sidebar (col-md-2) */
   padding: 20px; /* Adiciona um pouco de padding para o conteúdo principal */
 }
+
+/* Estilos para mensagens de sucesso (notice) */
+.flash.notice {
+  color: #cdd3cf; /* Cor do texto */
+  background-color: #d4edda; /* Cor de fundo */
+  border-color: #c3e6cb; /* Cor da borda, se aplicável */
+}
+
+/* Estilos para mensagens de erro (alert) */
+.flash.alert {
+  color: #1c7220;
+  background-color: #cce989;
+  border-color: #f5c6cb;
+}
+
+.devthree-link {
+    color: #130505; /* Cor vermelha, você pode substituir pela cor desejada */
+    text-decoration: none; /* Remove sublinhado padrão */
+  }
+
+  .devthree-link:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+  }

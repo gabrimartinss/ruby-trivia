@@ -1,4 +1,4 @@
-<section class="h-100 gradient-form" style="background-color: #eee;">
+<section class="h-100 gradient-form">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-xl-10">
@@ -8,7 +8,7 @@
               <div class="card-body p-md-5 mx-md-4">
                 <div class="text-center">
                   <%= image_tag "logo.png", style: "width: 185px;", alt: "logo" %>
-                  <h4 class="mt-1 mb-5 pb-1">We are the DevThree team</h4>
+                  <h4 class="mt-1 mb-5 pb-1">Ruby Trivia</h4>
                 </div>
 
                 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -31,7 +31,7 @@
                   <% end %>
 
                   <div class="text-center pt-1 mb-5 pb-1">
-                    <%= f.submit "Log in", class: "btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" %>
+                    <%= f.submit "Log in", class: "btn btn-primary btn-block fa-lg mb-3" %>
                     <%= link_to "Forgot password?", new_password_path(resource_name), class: "text-muted" %>
                   </div>
 
@@ -44,21 +44,13 @@
             </div>
 
             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
-              <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                <h4 class="mb-4">Ruby Trivia</h4>
-                <p class="small mb-0">
-                  <% if user_signed_in? %>
-                    Usuário está logado: <%= current_user.email %>
-                  <% else %>
-                    Usuário não está logado
-                  <% end %>
-
-                  <% if admin_signed_in? %>
-                    Adm está logado: <%= current_admin.email %>
-                  <% else %>
-                    Adm não está logado
-                  <% end %>
+              <div class="text-white px-3 py-4 p-md-5 mx-md-4" style="position: relative;">
+                <h4 class="mb-4">We are the DevThree Team!</h4>
+                <p class="small mb-0" style="font-size: 1.0em;">
+                  This application was developed by DevThree. If you want to know more about us, please check out our site
+                  <%= link_to "www.devthree.com.br", "http://www.devthree.com.br", target: "_blank", class: "devthree-link" %> <br>
                 </p>
+                <%= image_tag "logo_b_devthree.png", style: "width: 160px; position: absolute; bottom: -250px; right: -10px;", alt: "DevThree Logo" %>
               </div>
             </div>
           </div>

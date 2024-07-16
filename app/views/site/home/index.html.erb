@@ -62,7 +62,10 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container-fluid">
-      <%= link_to "RubyTrivia", site_home_index_path, class: "navbar-brand" %>
+      <a class="navbar-brand" href="<%= site_home_index_path %>">
+        <img src="/assets/logo.png" alt="RubyTrivia Logo" style="height: 45px;">
+        <span class="ms-2">Ruby Trivia</span>
+      </a>
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -123,7 +126,7 @@
           </p>
         </div>
         <div class="col-md-5 order-md-1">
-          <img class="featurette-image img-fluid mx-auto" src="/assets/05.png" alt="250x250" width="350" height="350">
+          <img class="featurette-image img-fluid mx-auto" src="/assets/05.png" alt="250x250" width="420" height="420">
         </div>
       </div>
 
