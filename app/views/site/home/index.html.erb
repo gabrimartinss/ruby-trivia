@@ -96,7 +96,11 @@
             <div class="centered-content">
               <h2>Ruby Trivia</h2>
               <p>Discover Ruby Trivia, an application by DevThree designed to assist new programmers in mastering Ruby on Rails.</p>
-              <p><%= link_to "Get Started »", new_user_registration_path, class: "btn btn-danger btn-sm", role: "button" %></p>
+              <% if user_signed_in? %>
+                <p><%= link_to "Get Started »", users_backoffice_home_index_path, class: "btn btn-danger btn-sm", role: "button" %></p>
+              <% else %>
+                <p><%= link_to "Get Started »", new_user_registration_path, class: "btn btn-danger btn-sm", role: "button" %></p>
+              <% end %>
             </div>
           </div>
         </div>
