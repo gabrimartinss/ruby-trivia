@@ -1,7 +1,9 @@
 <div class="nested-fields">
     <%= f.label :description %><br>
-    <%= f.text_field :description %>
-    <%= f.check_box :correct %> Correta?
+    <%= f.text_field :description %><br>
+    <%= f.label :explanation %><br>
+    <%= f.text_field :explanation %><br>
+    <%= f.check_box :correct %> Correct?
 
-  <%= link_to_remove_association('Remover', f)%>
+  <%= link_to_remove_association('Remove', f)%>
 </div>
