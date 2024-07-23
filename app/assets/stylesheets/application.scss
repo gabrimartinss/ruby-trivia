@@ -104,3 +104,18 @@
   .devthree-link:hover {
     text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
   }
+
+// sidenavibar
+  .custom-sidebar {
+    width: 190px; /* ajuste o valor conforme necessário */
+  }
+  
+  .custom-sidebar .nav-link {
+    font-size: 0.9rem; /* ajuste o tamanho da fonte conforme necessário */
+  }
+  
+  .custom-sidebar img {
+    width: 80px; /* ajuste o tamanho da imagem conforme necessário */
+    height: 60px; /* ajuste o tamanho da imagem conforme necessário */
+  }
+  

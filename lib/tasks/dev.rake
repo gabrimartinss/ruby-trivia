@@ -23,19 +23,7 @@ namespace :dev do
       { email: "admin@gmail.com", password: DEFAULT_PASSWORD, password_confirmation: DEFAULT_PASSWORD },
       { email: "jhon_silva@gmail.com", password: DEFAULT_PASSWORD, password_confirmation: DEFAULT_PASSWORD },
       { email: "yuna_downey@gmail.com", password: DEFAULT_PASSWORD, password_confirmation: DEFAULT_PASSWORD },
-      { email: "teste1@gmail.com", password: DEFAULT_PASSWORD, password_confirmation: DEFAULT_PASSWORD },
-      { email: "teste2@gmail.com", password: DEFAULT_PASSWORD, password_confirmation: DEFAULT_PASSWORD },
-      { email: "teste3@gmail.com", password: DEFAULT_PASSWORD, password_confirmation: DEFAULT_PASSWORD },
-      { email: "teste4@gmail.com", password: DEFAULT_PASSWORD, password_confirmation: DEFAULT_PASSWORD },
-      { email: "teste5@gmail.com", password: DEFAULT_PASSWORD, password_confirmation: DEFAULT_PASSWORD },
-      { email: "teste6@gmail.com", password: DEFAULT_PASSWORD, password_confirmation: DEFAULT_PASSWORD },
-      { email: "teste7@gmail.com", password: DEFAULT_PASSWORD, password_confirmation: DEFAULT_PASSWORD },
-      { email: "teste8@gmail.com", password: DEFAULT_PASSWORD, password_confirmation: DEFAULT_PASSWORD },
-      { email: "teste9@gmail.com", password: DEFAULT_PASSWORD, password_confirmation: DEFAULT_PASSWORD },
-      { email: "teste10@gmail.com", password: DEFAULT_PASSWORD, password_confirmation: DEFAULT_PASSWORD },
-      { email: "teste11@gmail.com", password: DEFAULT_PASSWORD, password_confirmation: DEFAULT_PASSWORD },
-      { email: "teste12@gmail.com", password: DEFAULT_PASSWORD, password_confirmation: DEFAULT_PASSWORD },
-      { email: "teste13@gmail.com", password: DEFAULT_PASSWORD, password_confirmation: DEFAULT_PASSWORD }
+      { email: "teste1@gmail.com", password: DEFAULT_PASSWORD, password_confirmation: DEFAULT_PASSWORD }
     ]
 
     admins.each do |admin|
