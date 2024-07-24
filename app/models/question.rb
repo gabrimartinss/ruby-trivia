@@ -7,6 +7,7 @@ class Question < ApplicationRecord
 
 
   #Callback
+  before_validation :set_default_answered, on: :create
   after_create :set_statistic
 
   scope :_search_subject_, ->(page, subject_id){
@@ -26,6 +27,10 @@ class Question < ApplicationRecord
   }
 
   private
+
+  def set_default_answered
+    self.answered = false if answered.nil?
+  end
 
   def set_statistic
     AdminStatistic.set_event(AdminStatistic::EVENTS[:total_questions])
