@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a **Ruby on Rails 7** application designed for trivia quizzes, running in a Dockerized environment. This application includes a basic admin panel and functionality to handle trivia questions and answers.
+This is a **Ruby on Rails 7** application designed originally for ruby on rails trivia quizzes, running in a Dockerized environment. This application includes a basic admin panel and functionality to handle trivia questions and answers.
 
 ## Setup Instructions
 
@@ -19,54 +19,49 @@ This is a **Ruby on Rails 7** application designed for trivia quizzes, running i
    git clone <repository-url>
    cd <repository-directory>
 
-Create and Configure the .env File
+2. **Create and Configure the .env File**
 
 In the root of the project directory, create a file named .env and add your default password and admin email addresses:
 
-DEFAULT_PASSWORD=your_default_password
+ ```.env
+DEFAULT_PASSWORD=example123
 ADMIN_EMAIL1=your_admin_email1@example.com
 ADMIN_EMAIL2=your_admin_email2@example.com
-
+ ```
 Replace your_default_password and email addresses with your desired values.
 
-Build and Start Docker Containers
+### Build and Start Docker Containers
 
-Build the Docker images and start the containers using Docker Compose:
-
+1. **Build the Docker images and start the containers using Docker Compose:**
+ ```
 docker-compose build
 docker-compose up
-
+ ```
+Or you can use makefile
+ ```
+make build
+make up
+ ```
 Access the Application
 
 Open your web browser and navigate to http://localhost:3000 to access the application.
 
-Admin Panel Setup
-To configure the default admin accounts, you need to run the database seeding command inside the Docker container.
-
-Access the Docker Container
-
-Enter the Docker container's bash shell:
+### Admin Panel Setup
+1. **To configure the default admin accounts, you need to run the database seeding command inside the Docker container.
+Enter the Docker container's bash shell:**
 
 bash
-Copiar código
-docker-compose exec app bash
-Run the Database Seeder
-
-Execute the database seeding command to create the default admin accounts:
-
-bash
-Copiar código
+```
 bundle exec rails db:seed
-Adding Default Data
-If you want to populate the database with generic data, you can use the dev:setup rake task.
+```
+now you can access http://localhost:3000/admins/sign_in and put your admin info
 
-Run the Development Setup Task
-
-Inside the Docker container, execute the following command:
+2. **If you want to populate the database with generic data, you can use the dev:setup rake task.**
 
 bash
-Copiar código
+```
 bundle exec rails dev:setup
+```
 This will drop and recreate the database, run migrations, and populate it with default subjects and questions.
 
 Additional Information
