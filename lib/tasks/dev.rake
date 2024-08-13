@@ -5,12 +5,12 @@ namespace :dev do
   desc "Configura o ambiente de desenvolvimento"
   task setup: :environment do
     if Rails.env.development?
-      show_spinner("Apagando DB...") { %x(rails db:drop) }
-      show_spinner("Criando DB...") { %x(rails db:create) }
-      show_spinner("Gerando Migrações...") { %x(rails db:migrate) }
-      show_spinner("Cadastrando usuário padrão...") { %x(rails dev:add_default_user) }
-      show_spinner("Cadastrando temas padrão...") { %x(rails dev:add_subjects) }
-      show_spinner("Cadastrando Perguntas...") { %x(rails dev:add_answers_questions) }
+      show_spinner("Dropping DB...") { %x(rails db:drop) }
+      show_spinner("Creating DB...") { %x(rails db:create) }
+      show_spinner("Making Migrations...") { %x(rails db:migrate) }
+      show_spinner("Registering Users...") { %x(rails dev:add_default_user) }
+      show_spinner("Registering Subjects...") { %x(rails dev:add_subjects) }
+      show_spinner("Registering Questions...") { %x(rails dev:add_answers_questions) }
     else
       puts "Você não está em desenvolvimento"
     end
