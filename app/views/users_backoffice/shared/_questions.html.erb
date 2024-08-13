@@ -37,7 +37,7 @@
                   </li>
                   <% end %>
                   <li>
-                    <%= form.submit "Confirm", class: "btn btn-success mt-2" %>
+                    <%= form.submit "Confirm", class: "btn btn-success mt-2", data: { bs_toggle: 'modal', bs_target: '#modal_schedule' } %>
                   </li>
                 </ul>
               </div>
@@ -51,4 +51,7 @@
   <div class="d-flex justify-content-center">
     <%= paginate @questions %>
   </div>
+
+       <%= button_tag t('schedule'), class: "btn btn-danger bi bi-calendar4-week", data: { bs_toggle: 'modal', bs_target: '#modal_scheduleModal' } %>
+       <%= render 'users_backoffice/answer/modal_schedule' %>
 </div>
