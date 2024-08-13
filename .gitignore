@@ -4,6 +4,10 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+# Ignore all environment files (except templates).
+/.env*
+!/.env*.erb
+
 # Ignore bundler config.
 /.bundle
 
