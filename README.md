@@ -62,7 +62,7 @@ bash
 ```
 bundle exec rails db:seed
 ```
-now you can access http://localhost:3000/admins/sign_in || localhost:3000/admins_backoffice/home/index and put your admin info
+now you can access http://localhost:3000/admins/sign_in || http://localhost:/admins_backoffice/home/index and put your admin info
 
 Additional Information
 For more information on managing the application and making changes, refer to the Rails Guides and Docker documentation.
