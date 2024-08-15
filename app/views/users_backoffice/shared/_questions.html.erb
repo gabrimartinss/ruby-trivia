@@ -12,11 +12,11 @@
   <div class="row">
     <div class="col-12">
       <% @questions.each do |question| %>
-      <% if flash[:alert] %>
-        <div class="alert alert-danger" role="alert">
-          <%= flash[:alert] %>
-        </div>
-      <% end %>
+        <% if flash[:alert] %>
+          <div class="alert alert-danger" role="alert">
+            <%= flash[:alert] %>
+          </div>
+        <% end %>
         <%= form_with url: users_backoffice_answer_path, local: true, data: { turbo: false } do |form| %>
           <div class="card mb-4">
             <div class="card-header">
@@ -49,10 +49,9 @@
           </div>
         <% end %>
       <% end %>
+      <div class="pagination-wrapper">
+        <%= paginate @questions %>
+      </div>
     </div>
-  </div>
-
-  <div class="d-flex justify-content-center">
-    <%= paginate @questions %>
   </div>
 </div>

@@ -138,3 +138,93 @@
     word-wrap: break-word; /* Garante que o texto grande será quebrado */
     text-align: center; /* Centraliza o texto */
   }
+
+  //kaminari
+  .pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  /* Adjust the pagination to fit inside its container */
+  .pagination {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.0rem;
+  }
+
+  .pagination .page-item {
+    flex: 0;
+  }
+
+  .custom-width {
+    max-width: 300px; /* Ajuste o valor conforme necessário */
+    width: 100%;
+  }
+
+  // homepage navbar/login button
+  .centered-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+  }
+
+  .centered-content h2 {
+    font-size: 2.5em;
+  }
+
+  .centered-content p {
+    font-size: 1.2em;
+  }
+
+  /* Media queries */
+  @media (max-width: 1200px) {
+    .centered-content h2 {
+      font-size: 2em;
+    }
+    .centered-content p {
+      font-size: 1em;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .centered-content h2 {
+      font-size: 1.8em;
+    }
+    .centered-content p {
+      font-size: 0.9em;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .centered-content h2 {
+      font-size: 1.5em;
+    }
+    .centered-content p {
+      font-size: 0.8em;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .centered-content h2 {
+      font-size: 1.2em;
+    }
+    .centered-content p {
+      font-size: 0.7em;
+    }
+  }
+
+  .navbar-nav.ms-auto {
+    margin-left: auto;
+  }
+
+  .login-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1050; /* Ensures it is above other elements */
+  }
