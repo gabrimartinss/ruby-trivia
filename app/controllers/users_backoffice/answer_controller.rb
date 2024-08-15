@@ -1,10 +1,16 @@
 class UsersBackoffice::AnswerController < UsersBackofficeController
   def question
-    @answer = Answer.find(params[:answer_id])
-    set_user_statistic(@answer)
+    if params[:answer_id].present?
+      @answer = Answer.find(params[:answer_id])
+      set_user_statistic(@answer)
+    else
+      flash[:alert] = "Please select an answer before confirming."
+      redirect_to request.referer # ou para a página onde o formulário é exibido
+    end
   end
 
   private
+
   def set_user_statistic(answer)
     if user_signed_in?
       user_statistic = UserStatistic.find_or_create_by(user: current_user)
