@@ -118,4 +118,23 @@
     width: 80px; /* ajuste o tamanho da imagem conforme necessário */
     height: 60px; /* ajuste o tamanho da imagem conforme necessário */
   }
+
+  // answer explanation
+  .answer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%; /* Posiciona no topo da tela */
+  }
   
+  .display-3 {
+    font-weight: bold;
+  }
+  
+  .explanation-text {
+    max-width: 80%; /* Define uma largura máxima */
+    margin-top: 20px;
+    font-size: 1.2rem;
+    word-wrap: break-word; /* Garante que o texto grande será quebrado */
+    text-align: center; /* Centraliza o texto */
+  }

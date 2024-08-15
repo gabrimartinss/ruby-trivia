@@ -1,5 +1,16 @@
-<% if @answer.correct %>
-  <h1>Correct Answer!! <%= @answer.explanation%></h1>
-<% else %>
-  <h1>Incorrect Answer :( <%= @answer.explanation%> </h1>
-<% end %>
+<div class="answer-container text-center">
+  <% if @answer.correct %>
+    <h1 class="display-3 text-success mb-4">Correct Answer!</h1>
+    <p class="lead explanation-text text-white"><%= @answer.explanation %></p>
+  <% else %>
+    <h1 class="display-3 text-danger mb-4">Incorrect Answer</h1>
+    <p class="lead explanation-text text-white"><%= @answer.explanation %></p>
+  <% end %>
+
+
+  <!-- Botões abaixo do texto -->
+  <div class="btn-group mt-4" role="group">
+    <a href="<%= request.referer  %>" class="btn btn-primary">Back</a>
+    <a href="<%= users_backoffice_statistic_path %>" class="btn btn-secondary">See my Statistics</a>
+  </div>
+</div>

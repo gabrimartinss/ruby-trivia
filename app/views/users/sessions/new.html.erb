@@ -11,6 +11,13 @@
                   <h4 class="mt-1 mb-5 pb-1">Ruby Trivia</h4>
                 </div>
 
+                <% if flash[:alert] %>
+                  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <%= flash[:alert] %>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                <% end %>
+
                 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                   <p>Please login to your account</p>
 
@@ -40,8 +47,8 @@
                     <%= link_to "Create new", new_registration_path(resource_name), class: "btn btn-outline-danger" %>
                   </div>
 
-                  <div class= text-center>
-                  <%= link_to "Back to home page", site_home_index_path, class: "text-muted" %>
+                  <div class="text-center">
+                    <%= link_to "Back to home page", site_home_index_path, class: "text-muted" %>
                   </div>
 
                 <% end %>
