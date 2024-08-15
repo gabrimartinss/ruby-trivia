@@ -1,6 +1,15 @@
 <!-- Fact 4 - Bootstrap Brain Component -->
 <section class="py-5 py-xl-8">
   <div class="container">
+    <!-- Flash Notices -->
+    <% flash.each do |key, message| %>
+      <div class="alert alert-<%= key == 'notice' ? 'info' : 'danger' %> alert-dismissible fade show" role="alert">
+        <%= message %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    <% end %>
+    <!-- End Flash Notices -->
+
     <div class="row justify-content-md-center">
       <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
         <h2 class="mb-4 display-5 text-center text-white">Here is your Statistics</h2>
@@ -37,6 +46,10 @@
           </div>
           <h5 class="display-9 fw-bold m-1 text-white">Wrong Questions: <%= @user_statistic.wrong_questions %></h5>
         </div>
+      </div>
+      <div class="text-center mt-5">
+         <%= button_to "Reset Statistics", users_backoffice_reset_user_statistics_path, method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure you want to reset your statistics?" } %>
+      </div>
       </div>
     </div>
   </div>

@@ -1,4 +1,4 @@
-RAKEDEFAULT_PASSWORD = '123456'
+RAKEDEFAULT_PASSWORD = '@S123456'
 DEFAULT_FILES_PATH = File.join(Rails.root, 'lib', 'tmp')
 
 namespace :dev do
