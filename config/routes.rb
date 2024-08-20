@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     patch 'profile', to: 'profile#update'
     get 'statistic', to: 'statistic#index'
     delete 'answer/reset_statistics', to: 'answer#reset_statistics', as: 'reset_user_statistics'
+    get 'answer', to: 'answer#question'
   end
   namespace :admins_backoffice do
     get 'home/index' # Dashboard
