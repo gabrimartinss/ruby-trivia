@@ -39,6 +39,8 @@ module RubyTrivia
     # Don't generate system test files.
     config.generators.system_tests = nil
 
-    config.web_console.whitelisted_ips = '172.18.0.1'
+    if Rails.env.development?
+      config.web_console.whitelisted_ips = '0.0.0.0/0'
+    end
   end
 end
