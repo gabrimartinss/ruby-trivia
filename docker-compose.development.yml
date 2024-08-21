@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      RAILS_ENV: development
+      DB_HOST: 'ruby_trivia_development'
+      DB_USER: 'postgres'
+      DB_PASSWORD: 'secret'
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    command: bash -c "rm -f /app/tmp/pids/server.pid && bin/rails db:create db:migrate && bin/rails server -b 0.0.0.0"
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: ruby_trivia_development
