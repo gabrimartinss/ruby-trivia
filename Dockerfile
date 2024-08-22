@@ -1,5 +1,5 @@
 ARG RUBY_VERSION=3.3.0
-ARG RAILS_ENV
+ARG RAILS_ENV=development
 ARG RAILS_LOG_TO_STDOUT
 FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim as base
 
@@ -7,9 +7,10 @@ FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim as base
 WORKDIR /app
 
 # Set production environment
-ENV RAILS_ENV=$RAILS_ENV \
+ENV RAILS_ENV=${RAILS_ENV} \
     BUNDLE_DEPLOYMENT="0" \
-    BUNDLE_PATH="/usr/local/bundle"
+    BUNDLE_PATH="/usr/local/bundle"\
+    SECRET_KEY_BASE="e14c222393646861aa11ba7be97a0f83e072aefb8f32bd8defa69c7bf8c907c673e932a7ad29430c7367764462e78b474613251a86dee15a9efaa95b4d7e4874"
 
 # Throw-away build stage to reduce size of final image
 FROM base as build
@@ -27,7 +28,7 @@ RUN npm install -g yarn
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./
-RUN bundle install
+RUN  bundle install
 
 # Copy application code
 COPY . .
