@@ -82,7 +82,4 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  database: ruby_trivia_production
-  username: ruby_trivia
-  password: <%= ENV["RUBY_TRIVIA_DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>
