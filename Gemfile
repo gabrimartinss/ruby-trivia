@@ -6,7 +6,7 @@ ruby "3.3.0"
 gem "rails", "~> 7.1.3", ">= 7.1.3.3"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem "sprockets-rails"
+gem 'sprockets-rails', '~> 3.4.2'
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
@@ -15,16 +15,16 @@ gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
-gem "importmap-rails"
+gem 'importmap-rails'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem "turbo-rails"
+gem 'turbo-rails', '2.0.5'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem "stimulus-rails"
+gem 'stimulus-rails', '1.3.3'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
-gem "jbuilder"
+gem 'jbuilder', '2.11.5'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
@@ -45,15 +45,15 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 # ADDED GEMS
-gem "devise"
+gem 'devise', '4.9.4'
 gem 'rails-i18n', '~> 7.0.0'
-gem 'tty-spinner'
+gem 'tty-spinner', '~> 0.9.3'
 gem 'bootstrap', '~> 5.3.3'
-gem 'sassc-rails'
-gem 'kaminari'
-gem 'cocoon'
-gem 'jquery-rails'
-gem 'dotenv-rails'
+gem 'sassc-rails', '2.1.2'
+gem 'kaminari', '1.2.2'
+gem 'cocoon', '1.2.15'
+gem 'jquery-rails', '4.6.0'
+gem 'dotenv-rails', '3.1.2'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -62,8 +62,8 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem "web-console"
-  gem 'rails_db'
+  gem 'web-console', '4.2.1'
+  gem 'rails_db', '2.4.4'
   # localhost:3000/rails/db
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]

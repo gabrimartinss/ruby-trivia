@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     resources :questions
   end
   devise_for :admins, :skip => [:registrations]
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'registrations' }
   get 'site/home/index'
   root 'site/home#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
