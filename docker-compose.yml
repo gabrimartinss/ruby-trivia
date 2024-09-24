@@ -10,9 +10,7 @@ services:
       DATABASE_URL: postgres://postgres:secret@db:5432/ruby_trivia_production
     depends_on:
       - db
-    volumes:
-      - ./public/assets:/app/public/assets  # Monta a pasta public/assets do contêiner no host
-    command: bash -c "rm -f /app/tmp/pids/server.pid && bin/rails db:prepare && bin/rails assets:precompile && bin/rails server -b 0.0.0.0"
+    command: bash -c "rm -f /app/tmp/pids/server.pid && bin/rails db:prepare && bin/rails server -b 0.0.0.0"
 
   db:
     image: postgres:latest
