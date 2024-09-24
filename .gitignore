@@ -39,4 +39,3 @@
 /config/master.key
 
 /config/credentials/production.key
-/config/environments/production.rb
