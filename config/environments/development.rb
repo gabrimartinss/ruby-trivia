@@ -9,12 +9,14 @@ Rails.application.configure do
   # Mailtrap config
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :user_name => 'api',
-    :password => '********3d28',
-    :address => 'live.smtp.mailtrap.io',
-    :host => 'live.smtp.mailtrap.io',
-    :port => '587',
-    :authentication => :login
+    address:              'smtp-mail.outlook.com',
+    port:                 587,
+    user_name:           'rubytrivia@hotmail.com',
+    password:            '@Mqttengine12',
+    authentication:       :login,
+    enable_starttls_auto: true,
+    open_timeout:         5,
+    read_timeout:         5
   }
 
   # In the development environment your application's code is reloaded any time

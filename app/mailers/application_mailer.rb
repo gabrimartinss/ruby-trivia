@@ -1,4 +1,6 @@
-class ApplicationMailer < ActionMailer::Base
-  default from: "from@example.com"
-  layout "mailer"
+class ApplicationMailer < ApplicationMailer
+  def welcome_email(user)
+    @user = user
+    mail(to: @user.email, subject: 'Bem-vindo ao RubyTrivia')
+  end
 end
