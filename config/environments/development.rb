@@ -12,7 +12,7 @@ Rails.application.configure do
     address:              'smtp-mail.outlook.com',
     port:                 587,
     user_name:           'rubytrivia@hotmail.com',
-    password:            '@Mqttengine12',
+    password:            ENV['SMTP_GMAIL_PASSWORD'],
     authentication:       :login,
     enable_starttls_auto: true,
     open_timeout:         5,
