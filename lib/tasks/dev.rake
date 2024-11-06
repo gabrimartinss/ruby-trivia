@@ -2,16 +2,12 @@ RAKEDEFAULT_PASSWORD = '@S123456'
 namespace :dev do
   desc "Set up the development environment"
   task setup: :environment do
-    if Rails.env.development?
       show_spinner("Dropping DB...") { %x(rails db:drop) }
       show_spinner("Creating DB...") { %x(rails db:create) }
       show_spinner("Making Migrations...") { %x(rails db:migrate) }
       show_spinner("Registering Users...") { %x(rails dev:add_default_user) }
       show_spinner("Registering Subjects...") { %x(rails dev:add_subjects) }
       show_spinner("Registering Questions...") { %x(rails dev:add_answers_questions) }
-    else
-      puts "You are not in development mode."
-    end
   end
 
   desc "Add Default Users"
